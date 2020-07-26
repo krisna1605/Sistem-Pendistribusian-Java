@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="750" pageHeight="612" orientation="Landscape" columnWidth="710" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1d974cd1-a403-4a49-ab65-8e1447c2f21e">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="TOTAL" class="java.lang.String"/>
+	<parameter name="TANGGAL" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="KARUNG" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     data_order.`id_order` AS data_order_id_order,
+     data_order.`tanggal` AS data_order_tanggal,
+     data_order.`id_pelanggan` AS data_order_id_pelanggan,
+     data_order.`nama` AS data_order_nama,
+     data_order.`no_telpon` AS data_order_no_telpon,
+     data_order.`alamat` AS data_order_alamat,
+     data_order.`total` AS data_order_total
+FROM
+     `data_order` data_order
+WHERE
+     data_order.`tanggal` LIKE '%$P!{TANGGAL}%']]>
+	</queryString>
+	<field name="data_order_id_order" class="java.lang.String"/>
+	<field name="data_order_tanggal" class="java.lang.String"/>
+	<field name="data_order_id_pelanggan" class="java.lang.String"/>
+	<field name="data_order_nama" class="java.lang.String"/>
+	<field name="data_order_no_telpon" class="java.lang.String"/>
+	<field name="data_order_alamat" class="java.lang.String"/>
+	<field name="data_order_total" class="java.lang.Integer"/>
+	<variable name="total" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{data_order_total}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="130" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="2220a1a9-772c-4f24-b9e5-8ea8c89221d0" x="0" y="0" width="70" height="28" forecolor="#FFFF66"/>
+				<textElement>
+					<font fontName="Times New Roman" size="24"/>
+				</textElement>
+				<text><![CDATA[TOKO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2220a1a9-772c-4f24-b9e5-8ea8c89221d0" x="70" y="0" width="80" height="28" forecolor="#33FF33"/>
+				<textElement>
+					<font fontName="Times New Roman" size="24"/>
+				</textElement>
+				<text><![CDATA[BERAS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2220a1a9-772c-4f24-b9e5-8ea8c89221d0" x="150" y="0" width="120" height="28" forecolor="#FF6600"/>
+				<textElement>
+					<font fontName="Times New Roman" size="24"/>
+				</textElement>
+				<text><![CDATA[HARAPAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2220a1a9-772c-4f24-b9e5-8ea8c89221d0" x="270" y="0" width="61" height="28" forecolor="#999900"/>
+				<textElement>
+					<font fontName="Times New Roman" size="24"/>
+				</textElement>
+				<text><![CDATA[PADI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7d42dd5e-3ad9-44d5-af5a-7b7248a7e9b8" x="80" y="48" width="131" height="20" forecolor="#666666"/>
+				<textElement>
+					<font fontName="Times New Roman" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Telp.(082)8001646]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9fe05961-bd2d-4187-ae18-0dd6bb7a75e7" x="0" y="28" width="351" height="20" forecolor="#666666"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jl.Pasar Rumput no.12B als Lt.Dasar Kec.SetiaBudi]]></text>
+			</staticText>
+			<image>
+				<reportElement uuid="ed275bda-9800-4958-a074-54177270f325" x="372" y="0" width="338" height="130"/>
+				<imageExpression><![CDATA["C:\\Users\\Krisna\\Documents\\NetBeansProjects\\New folder\\Distribusi_Harapan_Padi\\src\\report\\Logo02.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="34" splitType="Stretch">
+			<rectangle>
+				<reportElement uuid="e2af109c-88f4-44ea-bf36-7f3cc8fbc03b" x="0" y="12" width="710" height="20" backcolor="#999999"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="b9c44b97-7b67-4c08-8d8f-b944af8894be" x="0" y="12" width="194" height="20" forecolor="#333333" backcolor="#33FF33"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[*Laporan Beras Keluar*]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="37775f02-e0e4-433f-9f3d-0d1cf3d1b4e3" x="0" y="0" width="70" height="20" forecolor="#666666"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID ORDER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="37775f02-e0e4-433f-9f3d-0d1cf3d1b4e3" x="70" y="0" width="155" height="20" forecolor="#666666"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TANGGAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="37775f02-e0e4-433f-9f3d-0d1cf3d1b4e3" x="225" y="0" width="118" height="20" forecolor="#666666"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID PELANGGAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="37775f02-e0e4-433f-9f3d-0d1cf3d1b4e3" x="342" y="0" width="188" height="20" forecolor="#666666"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NAMA PELANGGAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="37775f02-e0e4-433f-9f3d-0d1cf3d1b4e3" x="624" y="0" width="86" height="20" forecolor="#666666"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="37775f02-e0e4-433f-9f3d-0d1cf3d1b4e3" x="530" y="0" width="94" height="20" forecolor="#666666"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NO TELPON]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="26" splitType="Stretch">
+			<rectangle>
+				<reportElement uuid="84d53c57-138b-456b-ab4a-adc8f7cd25a8" x="624" y="6" width="86" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="84d53c57-138b-456b-ab4a-adc8f7cd25a8" x="530" y="6" width="94" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="84d53c57-138b-456b-ab4a-adc8f7cd25a8" x="225" y="6" width="117" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="2941c0f7-1bb2-4f74-8906-fb229c69a513" x="0" y="6" width="70" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="84d53c57-138b-456b-ab4a-adc8f7cd25a8" x="70" y="6" width="155" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="84d53c57-138b-456b-ab4a-adc8f7cd25a8" x="342" y="6" width="188" height="20"/>
+			</rectangle>
+			<textField>
+				<reportElement uuid="8f2cd53a-4a3a-4672-813e-3bf59ec7023f" x="0" y="6" width="70" height="20" forecolor="#0099FF"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{data_order_id_order}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8f2cd53a-4a3a-4672-813e-3bf59ec7023f" x="70" y="6" width="155" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{data_order_tanggal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8f2cd53a-4a3a-4672-813e-3bf59ec7023f" x="343" y="6" width="187" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{data_order_nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8f2cd53a-4a3a-4672-813e-3bf59ec7023f" x="530" y="6" width="94" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{data_order_no_telpon}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8f2cd53a-4a3a-4672-813e-3bf59ec7023f" x="624" y="6" width="86" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{data_order_total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8f2cd53a-4a3a-4672-813e-3bf59ec7023f" x="225" y="6" width="113" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{data_order_id_pelanggan}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="146" splitType="Stretch">
+			<textField>
+				<reportElement uuid="989b0db5-6cdd-4fe4-8f29-49d62330a1fc" x="0" y="12" width="467" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["TOTAL PENDAPATAN : Rp. "+$P{TOTAL}+ " Rupiah"]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd MMMMM yyyy">
+				<reportElement uuid="ec9c20b2-d1e7-411b-bede-43425522357f" x="573" y="45" width="116" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="32de613f-2357-4f16-8f5b-4a21ca9857ec" x="530" y="45" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jakarta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="32de613f-2357-4f16-8f5b-4a21ca9857ec" x="541" y="126" width="109" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ILHAM ARMADI]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="989b0db5-6cdd-4fe4-8f29-49d62330a1fc" x="0" y="32" width="467" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["TOTAL BERAS TERJUAL : Rp. "+$P{KARUNG}+ " Karung"]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

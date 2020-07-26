@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="788" pageHeight="842" columnWidth="748" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="36be569c-3153-4c40-a776-b8380e01dea7">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="187"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="TANGGAL" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     member.`id_member` AS member_id_member,
+     member.`nama_member` AS member_nama_member,
+     member.`tempat_lahir` AS member_tempat_lahir,
+     member.`tanggal_lahir` AS member_tanggal_lahir,
+     member.`jenis_kelamin` AS member_jenis_kelamin,
+     member.`no_hp` AS member_no_hp,
+     member.`alamat_email` AS member_alamat_email,
+     member.`tanggal_pembuatan` AS member_tanggal_pembuatan,
+     member.`alamat` AS member_alamat
+FROM
+     `member` member]]>
+	</queryString>
+	<field name="member_id_member" class="java.lang.String"/>
+	<field name="member_nama_member" class="java.lang.String"/>
+	<field name="member_tempat_lahir" class="java.lang.String"/>
+	<field name="member_tanggal_lahir" class="java.lang.String"/>
+	<field name="member_jenis_kelamin" class="java.lang.String"/>
+	<field name="member_no_hp" class="java.lang.String"/>
+	<field name="member_alamat_email" class="java.lang.String"/>
+	<field name="member_tanggal_pembuatan" class="java.lang.String"/>
+	<field name="member_alamat" class="java.lang.String"/>
+	<background>
+		<band height="620" splitType="Stretch">
+			<image>
+				<reportElement uuid="30198110-acfa-4f7c-afae-32b817a396c7" x="257" y="385" width="247" height="204"/>
+				<imageExpression><![CDATA["C:\\Users\\Krisna\\Documents\\NetBeansProjects\\New folder\\Distribusi_Harapan_Padi\\src\\report\\Logo02.png"]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="95" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="2220a1a9-772c-4f24-b9e5-8ea8c89221d0" x="0" y="0" width="70" height="28" forecolor="#FFFF66"/>
+				<textElement>
+					<font fontName="Times New Roman" size="24"/>
+				</textElement>
+				<text><![CDATA[TOKO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2220a1a9-772c-4f24-b9e5-8ea8c89221d0" x="70" y="0" width="80" height="28" forecolor="#33FF33"/>
+				<textElement>
+					<font fontName="Times New Roman" size="24"/>
+				</textElement>
+				<text><![CDATA[BERAS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2220a1a9-772c-4f24-b9e5-8ea8c89221d0" x="150" y="0" width="120" height="28" forecolor="#FF6600"/>
+				<textElement>
+					<font fontName="Times New Roman" size="24"/>
+				</textElement>
+				<text><![CDATA[HARAPAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2220a1a9-772c-4f24-b9e5-8ea8c89221d0" x="270" y="0" width="61" height="28" forecolor="#999900"/>
+				<textElement>
+					<font fontName="Times New Roman" size="24"/>
+				</textElement>
+				<text><![CDATA[PADI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7d42dd5e-3ad9-44d5-af5a-7b7248a7e9b8" x="94" y="48" width="131" height="20" forecolor="#666666"/>
+				<textElement>
+					<font fontName="Times New Roman" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Telp.(082)8001646]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9fe05961-bd2d-4187-ae18-0dd6bb7a75e7" x="7" y="28" width="351" height="20" forecolor="#666666"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jl.Pasar Rumput no.12B als Lt.Dasar Kec.SetiaBudi]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="854300e5-6f60-44cf-a7f6-074414013172" x="299" y="68" width="271" height="20" forecolor="#666666" backcolor="#99FF99"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["LAPORAN SELURUH DATA MEMBER"]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="50" splitType="Stretch">
+			<rectangle>
+				<reportElement uuid="a1c8d101-6132-48e4-9d2f-faff62f59598" x="0" y="16" width="748" height="20" backcolor="#33FF33"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="b9c44b97-7b67-4c08-8d8f-b944af8894be" x="0" y="16" width="194" height="20" forecolor="#FF0000" backcolor="#33FF33"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[*Laporan Pembuatan Member*]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="27" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="37775f02-e0e4-433f-9f3d-0d1cf3d1b4e3" x="0" y="0" width="87" height="20" forecolor="#666666"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID MEMBER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="37775f02-e0e4-433f-9f3d-0d1cf3d1b4e3" x="107" y="0" width="118" height="20" forecolor="#666666"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NAMA MEMBER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="37775f02-e0e4-433f-9f3d-0d1cf3d1b4e3" x="240" y="0" width="59" height="20" forecolor="#666666"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[L / P]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="37775f02-e0e4-433f-9f3d-0d1cf3d1b4e3" x="313" y="0" width="76" height="20" forecolor="#666666"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NO HP]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="37775f02-e0e4-433f-9f3d-0d1cf3d1b4e3" x="414" y="0" width="90" height="20" forecolor="#666666"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TANGGAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="37775f02-e0e4-433f-9f3d-0d1cf3d1b4e3" x="529" y="0" width="219" height="20" forecolor="#666666"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ALAMAT]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="23" splitType="Stretch">
+			<textField>
+				<reportElement uuid="854300e5-6f60-44cf-a7f6-074414013172" x="107" y="0" width="118" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{member_nama_member}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="854300e5-6f60-44cf-a7f6-074414013172" x="240" y="0" width="59" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{member_jenis_kelamin}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="854300e5-6f60-44cf-a7f6-074414013172" x="313" y="0" width="76" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{member_no_hp}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="854300e5-6f60-44cf-a7f6-074414013172" x="0" y="0" width="87" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{member_id_member}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="854300e5-6f60-44cf-a7f6-074414013172" x="414" y="0" width="90" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{member_tanggal_pembuatan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="854300e5-6f60-44cf-a7f6-074414013172" x="529" y="0" width="219" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{member_alamat}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="97" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="32de613f-2357-4f16-8f5b-4a21ca9857ec" x="611" y="77" width="109" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ILHAM ARMADI]]></text>
+			</staticText>
+			<textField pattern="dd MMMMM yyyy">
+				<reportElement uuid="30ae8e29-e591-4d9b-bc63-94c309902b45" x="642" y="17" width="106" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="32de613f-2357-4f16-8f5b-4a21ca9857ec" x="595" y="17" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jakarta]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="148" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="185" splitType="Stretch"/>
+	</summary>
+</jasperReport>

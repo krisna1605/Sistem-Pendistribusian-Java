@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d44e761c-1fff-4eaf-ab88-2023d9b65085">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString>
+		<![CDATA[SELECT
+     beras.`idberas` AS beras_idberas,
+     beras.`merkberas` AS beras_merkberas,
+     beras.`hargaberas` AS beras_hargaberas,
+     beras.`jenisberas` AS beras_jenisberas,
+     beras.`jeniskarung` AS beras_jeniskarung,
+     beras.`stokkarung` AS beras_stokkarung
+FROM
+     `beras` beras]]>
+	</queryString>
+	<field name="beras_idberas" class="java.lang.String"/>
+	<field name="beras_merkberas" class="java.lang.String"/>
+	<field name="beras_hargaberas" class="java.lang.String"/>
+	<field name="beras_jenisberas" class="java.lang.String"/>
+	<field name="beras_jeniskarung" class="java.lang.String"/>
+	<field name="beras_stokkarung" class="java.lang.Integer"/>
+	<variable name="totalberas" class="java.lang.Integer" resetType="Page" incrementType="Page" calculation="Sum">
+		<variableExpression><![CDATA[$F{beras_stokkarung}]]></variableExpression>
+	</variable>
+	<variable name="total" class="java.lang.Integer" resetType="Page" calculation="DistinctCount">
+		<variableExpression><![CDATA[$F{beras_idberas}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="136" splitType="Stretch">
+			<frame>
+				<reportElement uuid="37db32c0-4323-4037-9d4e-26f0e65a44c7" mode="Opaque" x="132" y="0" width="670" height="82" forecolor="#FF0000" backcolor="#FFFFFF"/>
+				<staticText>
+					<reportElement uuid="2220a1a9-772c-4f24-b9e5-8ea8c89221d0" x="10" y="10" width="70" height="28" forecolor="#FFFF66"/>
+					<textElement>
+						<font fontName="Times New Roman" size="24"/>
+					</textElement>
+					<text><![CDATA[TOKO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="2220a1a9-772c-4f24-b9e5-8ea8c89221d0" x="80" y="10" width="80" height="28" forecolor="#33FF33"/>
+					<textElement>
+						<font fontName="Times New Roman" size="24"/>
+					</textElement>
+					<text><![CDATA[BERAS]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="2220a1a9-772c-4f24-b9e5-8ea8c89221d0" x="160" y="10" width="120" height="28" forecolor="#FF6600"/>
+					<textElement>
+						<font fontName="Times New Roman" size="24"/>
+					</textElement>
+					<text><![CDATA[HARAPAN]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="2220a1a9-772c-4f24-b9e5-8ea8c89221d0" x="280" y="10" width="61" height="28" forecolor="#999900"/>
+					<textElement>
+						<font fontName="Times New Roman" size="24"/>
+					</textElement>
+					<text><![CDATA[PADI]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="9fe05961-bd2d-4187-ae18-0dd6bb7a75e7" x="10" y="38" width="351" height="20" forecolor="#666666"/>
+					<textElement>
+						<font fontName="Times New Roman" size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Jl.Pasar Rumput no.12B als Lt.Dasar Kec.SetiaBudi]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="7d42dd5e-3ad9-44d5-af5a-7b7248a7e9b8" x="90" y="58" width="131" height="20" forecolor="#666666"/>
+					<textElement>
+						<font fontName="Times New Roman" size="16" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Telp.(082)8001646]]></text>
+				</staticText>
+			</frame>
+			<image>
+				<reportElement uuid="cf57f792-4120-4b3b-89f5-2c129f610ef9" x="0" y="0" width="204" height="102"/>
+				<imageExpression><![CDATA["C:\\Users\\Krisna\\Documents\\NetBeansProjects\\New folder\\Distribusi_Harapan_Padi\\src\\report\\Logo02.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="b9c44b97-7b67-4c08-8d8f-b944af8894be" x="183" y="92" width="229" height="20" forecolor="#666666" backcolor="#33FF33"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[*Laporan Keseluruhan Stok Beras*]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy HH.mm.ss">
+				<reportElement uuid="672fc025-083f-4598-91ae-64d0f03d070c" x="236" y="112" width="131" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="37" splitType="Stretch">
+			<rectangle>
+				<reportElement uuid="28449d5e-2524-4e2e-ba8b-bf3228265515" x="0" y="4" width="802" height="20"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="a7e6609c-6093-449e-81a8-62aef08f4821" style="Column header" x="0" y="6" width="132" height="18" forecolor="#000000"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID BERAS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="264d9aba-9af1-4c7b-926d-45c990453329" style="Column header" x="132" y="6" width="138" height="18" forecolor="#000000"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[MERK BERAS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="264d9aba-9af1-4c7b-926d-45c990453329" style="Column header" x="270" y="6" width="138" height="18" forecolor="#000000"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[HARGA BERAS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="264d9aba-9af1-4c7b-926d-45c990453329" style="Column header" x="408" y="6" width="138" height="18" forecolor="#000000"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[JENIS BERAS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="264d9aba-9af1-4c7b-926d-45c990453329" style="Column header" x="546" y="6" width="140" height="18" forecolor="#000000"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[BERAT KARUNG]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="264d9aba-9af1-4c7b-926d-45c990453329" style="Column header" x="686" y="6" width="116" height="18" forecolor="#000000"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[STOK BERAS]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement uuid="60a4443e-a968-41f4-b470-d73274a001d1" style="Row" mode="Opaque" x="0" y="0" width="797" height="18"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="7bb67a54-b89c-490b-be25-7d9c85e6a305" style="Detail" positionType="Float" x="0" y="0" width="132" height="18"/>
+					<textElement textAlignment="Center">
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{beras_idberas}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="73509e58-02d5-44bc-a3db-f67ced0b2237" style="Detail" positionType="Float" x="132" y="0" width="138" height="18"/>
+					<textElement textAlignment="Center">
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{beras_merkberas}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="73509e58-02d5-44bc-a3db-f67ced0b2237" style="Detail" positionType="Float" x="270" y="0" width="138" height="18"/>
+					<textElement textAlignment="Center">
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{beras_hargaberas}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="73509e58-02d5-44bc-a3db-f67ced0b2237" style="Detail" positionType="Float" x="408" y="0" width="138" height="18"/>
+					<textElement textAlignment="Center">
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{beras_jenisberas}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="73509e58-02d5-44bc-a3db-f67ced0b2237" style="Detail" positionType="Float" x="546" y="0" width="138" height="18"/>
+					<textElement textAlignment="Center">
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{beras_jeniskarung}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="73509e58-02d5-44bc-a3db-f67ced0b2237" style="Detail" positionType="Float" x="686" y="0" width="111" height="18"/>
+					<textElement textAlignment="Center">
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{beras_stokkarung}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="140" splitType="Stretch">
+			<line>
+				<reportElement uuid="8377a2af-ac79-4499-b2ab-53fcd5267023" positionType="FixRelativeToBottom" x="0" y="3" width="802" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement uuid="989b0db5-6cdd-4fe4-8f29-49d62330a1fc" x="0" y="13" width="292" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["TOTAL BERAS :  "+$V{total}+" Unit"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="989b0db5-6cdd-4fe4-8f29-49d62330a1fc" x="0" y="33" width="319" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["TOTAL KARUNG :  "+$V{totalberas}+ " Karung"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="32de613f-2357-4f16-8f5b-4a21ca9857ec" x="630" y="33" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jakarta]]></text>
+			</staticText>
+			<textField pattern="dd MMMMM yyyy">
+				<reportElement uuid="ec9c20b2-d1e7-411b-bede-43425522357f" x="677" y="33" width="111" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="32de613f-2357-4f16-8f5b-4a21ca9857ec" x="660" y="84" width="109" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ILHAM ARMADI]]></text>
+			</staticText>
+			<frame>
+				<reportElement uuid="6e29c2da-1273-41a3-8c0b-f2afb8cdf52d" mode="Opaque" x="0" y="116" width="802" height="24" forecolor="#D0B48E" backcolor="#000000"/>
+				<textField evaluationTime="Report">
+					<reportElement uuid="11acbd3a-3b8a-4734-b652-600c9e89f603" style="Column header" x="757" y="3" width="40" height="20" forecolor="#FFFFFF"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="9f5eab34-d907-4f9d-b77b-ede40b174706" style="Column header" x="677" y="3" width="80" height="20" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
